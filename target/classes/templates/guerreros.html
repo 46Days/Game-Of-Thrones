@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Nuestros Guerreros</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+</head>
+<body background="">
+	<center>
+		<div>
+			<br> <a title="Los Tejos" th:href="@{/}"><img
+				src="https://s03.s3c.es/imag/_v0/770x420/7/3/d/Juego-de-Tronos.jpeg"
+				width="200" height="100" alt="Game Of Thrones" /></a>
+		</div>
+	</center>
+
+	<div class="container mt-4">
+		<a th:href="@{/guerrero/newGue}" class="btn btn-primary">Registrar
+			Guerrero</a> <a th:href="@{/listar}" class="btn btn-success">Dragones</a>
+		<a th:href="@{/guerrero/listarGuerrero}" class="btn btn-primary">Guerreros</a>
+		<a th:href="@{/conquista/mapa}" class="btn btn-success">Conquista</a> <a
+			th:href="@{/subdito/listarSubdito}" class="btn btn-success">Subditos</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th><font COLOR="red">Guerrero N#</font></th>
+					<th><font COLOR="red"></font></th>
+					<th><font COLOR="red">NOMBRE</font></th>
+					<th><font COLOR="red"></font></th>
+					<th><font COLOR="red">ACCIONES</font></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="guerrero:${guerrero}">
+					<td th:text="${guerrero.id}"></td>
+					<th><font COLOR="red"></font></th>
+					<td th:text="${guerrero.name}">${dragon.name}</td>
+					<th><font COLOR="red"></font></th>
+					<td><a th:href="@{/guerrero/editarGue/}+${guerrero.id}"
+						class="btn btn-success">Ver Informacion</a>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script type="funciones.js"></script>
+</body>
+</html>

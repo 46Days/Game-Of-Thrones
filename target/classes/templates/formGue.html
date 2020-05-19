@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registrar Guerreros</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container mt-4">
+		<div class="col-sm-6">
+			<form th:action="@{/guerrero/saveGue}" th:object=${guerrero} method="POST">
+				<div class="card">
+					<div class="card-header">
+						<h3>Registrar Guerrero</h3>
+					</div>
+					<div class="card-body">
+						<div class="form-group">
+							<label>ID</label> <input th:field="*{id}" type="text"
+								class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>Cargo</label> <input th:field="*{cargo}" type="text"
+								class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>Especialidad</label> <input th:field="*{especialidad}"
+								type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>Muertes</label> <input th:field="*{kills}" type="text"
+								class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>Nombre</label> <input th:field="*{name}" type="text"
+								class="form-control" />
+						</div>
+					</div>
+					<div class="card-footer">
+						<input type="submit" value="Guardar" class="btn btn-success">
+						<a th:href="@{/guerrero/listarGuerrero}" class="btn btn-primary">Volver</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Nuestros Subditos</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+</head>
+<body background="">
+	<center>
+		<div>
+		<br>
+<a title="GAME OF THRONES" th:href="@{/home}"><img src="https://s03.s3c.es/imag/_v0/770x420/7/3/d/Juego-de-Tronos.jpeg" width="200" height="100" alt="Game Of Thrones" /></a>
+		</div>
+	</center>
+
+	<div class="container mt-4">
+		<a th:href="@{/subdito/newSubdito}" class="btn btn-primary">Registrar Subditos</a>
+		<a th:href="@{/listar}" class="btn btn-success">Dragones</a>
+		<a th:href="@{/guerrero/listarGuerrero}" class="btn btn-success">Guerreros</a>
+		<a th:href="@{/conquista/mapa}" class="btn btn-success">Conquista</a> <a
+			th:href="@{/subdito/listarSubdito}" class="btn btn-primary">Subditos</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th><font COLOR="red">ID</font></th>
+					<th><font COLOR="red">NOMBRE</font></th>
+					<th><font COLOR="red"># DE HIJOS</font></th>
+					<th><font COLOR="red">NOMBRE(S)</font></th>
+					<th><font COLOR="red">PROBLEMAS</font></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="subdito:${subdito}">
+					<td th:text="${subdito.id}"></td>
+					<td th:text="${subdito.name}">${dragon.name}</td>
+					<td th:text="${subdito.numHijos}">${dragon.raza}</td>
+					<td th:text="${subdito.nombreHijos}">${dragon.color}</td>
+					<td th:text="${subdito.problema}">${dragon.kills}</td>
+
+					<td><a th:href="@{/subdito/editarSubdito/}+${11}"
+						class="btn btn-success">Editar</a> <a
+						th:href="@{/subdito/eliminarSubdito/}+${subdito.id}"
+						class="btn btn-danger">Ejecutar</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script type="funciones.js"></script>
+</body>
+</html>
